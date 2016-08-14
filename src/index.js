@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
-const App = React.createClass({
-	render() {
-		return (
-			<h1>Hello World!</h1>
-		)
-	}
-});
+import App from './components/app';
+import store from './reducers/root';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const renderThis = (
+	<Provider store={store}>
+		<App />
+	</Provider>
+)
+
+render(renderThis, document.getElementById('root'));
