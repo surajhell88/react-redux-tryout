@@ -1,22 +1,7 @@
-import { createStore } from 'redux';
-// import { browserHistory } from 'react-router';
-// import { syncHistoryWithStore } from 'react-router-redux';
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
-const rootReducer = function (state, action) {
-	switch(action.type) {
-		case 'SAY_HELLO':
-			alert(state.someMessage + action.sentence);
-			return state;
-		default:
-			return state;
-	}
-	return state;
-}
+import cart from './cart';
+import products from './products';
 
-const store = createStore(rootReducer, {
-	someMessage: 'Hi, '
-});
-
-// export const history = syncHistoryWithStore(browserHistory, store);
-
-export default store;
+export default combineReducers({ cart, products, routing: routerReducer });
