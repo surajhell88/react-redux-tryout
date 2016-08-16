@@ -5,16 +5,23 @@ export function addToCart(product) {
 	}
 }
 
-export function removeFromCart(index) {
+export function removeFromCart(id) {
 	return {
 		type: 'REMOVE_FROM_CART',
-		index
+		id
 	}
 }
 
-export function toggleIsInCart(index) {
+export function incrementProductQuantity(id) {
 	return {
-		type: 'TOGGLE_IN_CART',
-		index
+		type: 'INC_PRODUCT_QUANTITY',
+		id
+	}
+}
+
+export function decrementProductQuantity(id) {
+	return {
+		type: 'DEC_PRODUCT_QUANTITY',
+		id
 	}
 }

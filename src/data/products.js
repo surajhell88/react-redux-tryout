@@ -1,38 +1,45 @@
 const products = [
 	{
+		id: 1,
 		name: 'Samsung Note 7',
 		price: '489',
-		isInCart: false
+		quantity: 5
 	},
 	{
+		id: 2,
 		name: 'LG G4',
 		price: '329',
-		isInCart: false
+		quantity: 8
 	},
 	{
+		id: 3,
 		name: 'Apple IPhone 6S',
 		price: '409',
-		isInCart: false
+		quantity: 2
 	},
 	{
+		id: 4,
 		name: 'Gionee X5',
 		price: '299',
-		isInCart: false
+		quantity: 15
 	},
 	{
+		id: 5,
 		name: 'Intex Aqua',
 		price: '229',
-		isInCart: false
+		quantity: 23
 	},
 	{
+		id: 6,
 		name: 'Micromax YU',
 		price: '339',
-		isInCart: false
+		quantity: 9
 	},
 	{
+		id: 7,
 		name: 'Moto G4',
 		price: '289',
-		isInCart: false
+		quantity: 11
 	}
 ];
 

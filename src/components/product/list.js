@@ -1,16 +1,16 @@
 import React from 'react';
 
-import ProductItem from './item';
+import ProductListItem from './list-item';
 
 class ProductList extends React.Component {
-	addProductToCart(product, index) {
+	addToCartHandler(product) {
 		this.props.addToCart(product);
-		this.props.toggleIsInCart(index);
+		this.props.decrementProductQuantity(product.id);
 	}
 	render() {
-		var cartItems = this.props.products.map((product, index) => {
+		var cartItems = this.props.products.map((product, i) => {
 			return (
-				<ProductItem key={index} index={index} {...product} doSomethingInCart={this.addProductToCart.bind(this)} addButton={true} />
+				<ProductListItem key={i} {...product} addToCart={this.addToCartHandler.bind(this)}  />
 			);
 		});
 		return <div className="container">

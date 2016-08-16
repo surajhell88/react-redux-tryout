@@ -1,12 +1,19 @@
 import React from 'react';
 
-import ProductItem from './item';
+import CartItem from './cart-item';
 
 class ProductCart extends React.Component {
+	cartRemovalHandler(id) {
+		this.props.removeFromCart(id);
+		this.props.incrementProductQuantity(id);
+		if (product.quantity == 1) {
+			this.props.addToCart(product);
+		}
+	}
 	render() {
-		var productItems = this.props.cart.map((product, index) => {
+		var productItems = this.props.cart.map((product, i) => {
 			return (
-				<ProductItem key={index} index={index} {...product} doSomethingInCart={this.props.removeFromCart} removeButton={true}/>
+				<CartItem key={i} {...product} removeFromCart={this.cartRemovalHandler.bind(this)} />
 			);
 		});
 		return <div className="container">
