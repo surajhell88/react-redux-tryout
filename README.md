@@ -1,4 +1,4 @@
-# react-redux-tryout
+# Some Online Shop
 
 ## Dependency
 
