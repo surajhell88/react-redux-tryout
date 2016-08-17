@@ -20,17 +20,13 @@ function products(state = [], action) {
 			if (i == -1) {
 				return state;
 			}
-			if (state[i].quantity > 1) {
+			if (state[i].quantity > 0) {
 				return [
 					...state.slice(0, i),
 					{...state[i], quantity: state[i].quantity - 1 },
 					...state.slice(i + 1)
 				];
 			}
-			return [
-				...state.slice(0, i),
-				...state.slice(i + 1)
-			];
 			return state;
 		default:
 			return state;

@@ -6,9 +6,6 @@ class ProductCart extends React.Component {
 	cartRemovalHandler(id) {
 		this.props.removeFromCart(id);
 		this.props.incrementProductQuantity(id);
-		if (product.quantity == 1) {
-			this.props.addToCart(product);
-		}
 	}
 	render() {
 		var productItems = this.props.cart.map((product, i) => {
