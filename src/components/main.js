@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../actions/actionCreators';
+import { allActionCreators } from '../actions';
 import Nav from './nav';
 
 class Main extends React.Component {
@@ -17,7 +17,7 @@ class Main extends React.Component {
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators(actionCreators, dispatch);
+	return bindActionCreators(allActionCreators, dispatch);
 }
 
 export default connect(state => (state), mapDispatchToProps)(Main)
