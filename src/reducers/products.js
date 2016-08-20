@@ -1,4 +1,4 @@
-function products(state = [], action) {
+function items(state = [], action) {
 	let i = -1;
 	switch (action.type) {
 		case 'INC_PRODUCT_QUANTITY':
@@ -28,6 +28,35 @@ function products(state = [], action) {
 				];
 			}
 			return state;
+		default:
+			return state;
+	}
+}
+
+function products(state = {}, action) {
+	let i = -1;
+	switch (action.type) {
+		case 'INC_PRODUCT_QUANTITY':
+		case 'DEC_PRODUCT_QUANTITY':
+			return {
+				...state,
+				items: items(state.items, action)
+			};
+		case 'TOGGLE_FETCHING_PRODUCTS':
+			return {
+				...state,
+				isFetchingProducts: action.isFetching
+			}
+		case 'TOGGLE_FETCHING_ERROR':
+			return {
+				...state,
+				errorWhileFetching: action.isFetchingError
+			}
+		case 'RECIEVED_PRODUCTS':
+			return {
+				...state,
+				items: action.products
+			}
 		default:
 			return state;
 	}

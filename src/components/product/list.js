@@ -7,8 +7,14 @@ class ProductList extends React.Component {
 		this.props.addToCart(product);
 		this.props.decrementProductQuantity(product.id);
 	}
+	componentDidMount() {
+		this.props.fetchProducts();
+	}
 	render() {
-		var cartItems = this.props.products.map((product, i) => {
+		if (this.props.products.isFetchingProducts) {
+			return <div className="loader"></div>
+		}
+		var cartItems = this.props.products.items.map((product, i) => {
 			return (
 				<ProductListItem key={i} {...product} addToCart={this.addToCartHandler.bind(this)}  />
 			);
