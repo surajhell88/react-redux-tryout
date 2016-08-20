@@ -31,8 +31,8 @@ class ProductCart extends React.Component {
 			</div>
 			<hr/>
 			<div className="row">
-			    <div className="col-md-6"><h2>Total cost</h2></div>
-			    <div className="col-md-6"><span className="pull-right"><h2>${totalCartCost}</h2></span></div>
+			    <div className="col-sm-6"><h2>Total cost</h2></div>
+			    <div className="col-sm-6"><span className="pull-right"><h2>${totalCartCost}</h2></span></div>
 		  	</div>
 			<hr/>
 		</div>
