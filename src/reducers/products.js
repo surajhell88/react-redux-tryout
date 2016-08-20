@@ -50,7 +50,7 @@ function products(state = {}, action) {
 		case 'TOGGLE_FETCHING_ERROR':
 			return {
 				...state,
-				errorWhileFetching: action.isFetchingError
+				errorWhileFetching: action.isErrorFetching
 			}
 		case 'RECIEVED_PRODUCTS':
 			return {

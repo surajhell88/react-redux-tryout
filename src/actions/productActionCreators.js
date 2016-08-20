@@ -21,10 +21,10 @@ export function toggleFetchingProducts(isFetching) {
 	}
 }
 
-export function toggleErrorFetchingProducts(isFetching) {
+export function toggleErrorFetchingProducts(isErrorFetching) {
 	return {
 		type: 'TOGGLE_FETCHING_ERROR',
-		isFetching
+		isErrorFetching
 	}
 }
 
