@@ -12,7 +12,7 @@ class ProductList extends React.Component {
 	}
 	render() {
 		if (this.props.products.isFetchingProducts) {
-			return <div className="loader"></div>
+			return <div className="text-center"><h3>Fetching Products...</h3></div>
 		}
 		var cartItems = this.props.products.items.map((product, i) => {
 			return (
