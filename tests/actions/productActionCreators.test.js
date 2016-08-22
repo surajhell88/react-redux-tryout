@@ -32,7 +32,7 @@ describe('Product Action Creators', () => {
     });
 })
 
-describe('Product Action Creators', () => {
+describe('Product Async Action Creators', () => {
     afterEach(() => {
         nock.cleanAll()
     });
@@ -50,7 +50,6 @@ describe('Product Action Creators', () => {
         const store = mockStore({ products: [] });
 
         return store.dispatch(actions.fetchProducts()).then(() => { // return of async actions
-            console.log(store.getActions());
             expect(store.getActions()).toEqual(expectedActions)
         });
     });

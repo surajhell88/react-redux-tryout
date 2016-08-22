@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 function items(state = [], action) {
 	let i = -1;
 	switch (action.type) {
