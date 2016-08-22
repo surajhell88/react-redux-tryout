@@ -1,7 +1,7 @@
 import expect from 'expect';
-import { addToCart, removeFromCart } from '../../src/actions/cartActionCreators.js';
+import * as actions from '../../src/actions/cartActionCreators.js';
 
-describe('Action Creators', () => {
+describe('Cart Action Creators', () => {
   	describe('addToCart',()=> {
     	it('should create an action to add a product', () => {
 	    	const product = {
@@ -12,7 +12,7 @@ describe('Action Creators', () => {
 				type: 'ADD_TO_CART',
 				product
 			};
-			const actual = addToCart(product);
+			const actual = actions.addToCart(product);
 			expect(actual).toEqual(expected);
     	});
   	});
@@ -23,7 +23,7 @@ describe('Action Creators', () => {
 				type: 'REMOVE_FROM_CART',
 				id
 			};
-			const actual = removeFromCart(id);
+			const actual = actions.removeFromCart(id);
 			expect(actual).toEqual(expected);
 	    });
   	});
