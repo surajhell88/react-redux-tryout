@@ -5,12 +5,12 @@ import ProductListItem from './list-item';
 const ProductList = ({ products, addToCartHandler }) => {
 	let cartItems = null;
 	if (products.isFetchingProducts) {
-		cartItems = <div className="text-center"><h3>Fetching Product List...</h3></div>
+		cartItems = <div className="text-center fetching-product-list"><h3>Fetching Product List...</h3></div>
 	} else if(products.errorWhileFetching) {
-		cartItems = <div className="text-center text-danger"><h3>Is there any problem with your Internet Connectivity?</h3></div>
+		cartItems = <div className="text-center text-danger product-list-fetch-error"><h3>Is there any problem with your Internet Connectivity?</h3></div>
 	} else {
 		if (products.items.length == 0) {
-			cartItems = <div className="text-center text-info"><h3>Oops, we are sold out!</h3></div>
+			cartItems = <div className="text-center text-info no-product-data"><h3>Oops, we are sold out!</h3></div>
 		} else {
 			cartItems = products.items.map((product, i) => {
 				return (
