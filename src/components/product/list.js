@@ -2,17 +2,17 @@ import React from 'react';
 
 import ProductListItem from './list-item';
 
-const ProductList = ({ listOfProducts, isFetchingProducts, errorWhileFetching, addToCartHandler }) => {
+const ProductList = ({ products, addToCartHandler }) => {
 	let cartItems = null;
-	if (isFetchingProducts) {
+	if (products.isFetchingProducts) {
 		cartItems = <div className="text-center"><h3>Fetching Product List...</h3></div>
-	} else if(errorWhileFetching) {
+	} else if(products.errorWhileFetching) {
 		cartItems = <div className="text-center text-danger"><h3>Is there any problem with your Internet Connectivity?</h3></div>
 	} else {
-		if (listOfProducts.length == 0) {
+		if (products.items.length == 0) {
 			cartItems = <div className="text-center text-info"><h3>Oops, we are sold out!</h3></div>
 		} else {
-			cartItems = listOfProducts.map((product, i) => {
+			cartItems = products.items.map((product, i) => {
 				return (
 					<ProductListItem key={i} product={product} addToCart={addToCartHandler}  />
 				);
@@ -27,9 +27,7 @@ const ProductList = ({ listOfProducts, isFetchingProducts, errorWhileFetching, a
 }
 
 ProductList.propTypes = {
-	listOfProducts: React.PropTypes.array.isRequired,
-	isFetchingProducts: React.PropTypes.bool.isRequired,
-	errorWhileFetching: React.PropTypes.bool.isRequired,
+	products: React.PropTypes.object.isRequired,
 	addToCartHandler: React.PropTypes.func.isRequired
 }
 

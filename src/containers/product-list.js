@@ -7,9 +7,7 @@ import ProductList from '../components/product/list';
 
 function mapStateToProps(state) {
 	return {
-		listOfProducts: state.products.items,
-		isFetchingProducts: state.products.isFetchingProducts,
-		errorWhileFetching: state.products.errorWhileFetching
+		products: state.products
 	};
 };
 
