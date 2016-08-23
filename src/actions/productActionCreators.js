@@ -35,14 +35,23 @@ export function recievedProducts(products) {
 	}
 }
 
+const jsonAPIWithProducts = 'https://api.myjson.com/bins/406sj',
+	jsonAPIWithoutProducts = 'https://api.myjson.com/bins/470e';
+
 export function fetchProducts() {
 	return function (dispatch) {
 		dispatch(toggleFetchingProducts(true));
-		return fetch('https://api.myjson.com/bins/406sj')
+		return fetch(jsonAPIWithProducts)
 			.then(response => response.json())
 			.then(json => {
-				dispatch(toggleFetchingProducts(false))
-				dispatch(recievedProducts(json.products))
+				dispatch(toggleFetchingProducts(false));
+				let products = [];
+				if (json.products) {
+					products = json.products;
+				} else {
+					dispatch(toggleErrorFetchingProducts(true));
+				}
+				dispatch(recievedProducts(products));
 			})
 	}
 }
