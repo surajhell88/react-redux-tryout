@@ -1,7 +1,7 @@
 import expect from 'expect';
 import cartReducer from '../../src/reducers/cart';
 
-describe('todos reducer', () => {
+describe('Cart reducer', () => {
 	it('should return the initial state', () => {
 		expect(
 			cartReducer(undefined, {})

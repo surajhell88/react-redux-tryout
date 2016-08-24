@@ -1,7 +1,7 @@
 import expect from 'expect';
 import productReducer from '../../src/reducers/products';
 
-describe('todos reducer', () => {
+describe('Products reducer', () => {
 	it('should return the initial state', () => {
 		expect(
 			productReducer(undefined, {})

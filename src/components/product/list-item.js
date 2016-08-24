@@ -7,10 +7,17 @@ const ProductItem = ({ product, addToCart }) => {
 		onClick={(e) => {
 			e.preventDefault();
 		}}>
+		<span className="product-item-name">
 			{product.name}
+		</span>
 		<span className="pull-right">
-			<span className="badge">${product.price}</span>&nbsp;
-			<span className="badge">{product.quantity} left in stock</span>&nbsp;
+			<span className="badge product-item-price">${product.price}</span>&nbsp;
+			<span className="badge">
+				<span className="product-item-quantity">
+					{product.quantity}
+				</span> left in stock
+			</span>
+			&nbsp;
 			<button 
 				disabled={product.quantity == 0}
 				className="btn btn-sm btn-primary" 
