@@ -50,9 +50,9 @@ describe('ProductList Component', () => {
         expect(enzymeWrapper.find('div.no-product-data').length).toBe(1);
     });
 
-    it('should render product list', () => {
+    it('should render product list items', () => {
         const { enzymeWrapper } = setup(products);
-        const prodictListItem = enzymeWrapper.find(ProductListItem);
-        expect(prodictListItem.length).toBe(2);
+        const productListItem = enzymeWrapper.find(ProductListItem);
+        expect(productListItem.length).toBe(2);
     })
 });

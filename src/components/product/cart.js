@@ -6,7 +6,7 @@ import CartItem from './cart-item';
 const ProductCart = ({ cartItems, totalCartCost, cartRemovalHandler }) => {
 	let renderProducts = null;
 	if (cartItems.length == 0) {
-		renderProducts = <div className="text-center"><h3>No items in Cart, You can buy them from our <Link to="/products">Product List</Link></h3></div>
+		renderProducts = <div className="text-center cart-empty"><h3>No items in Cart, You can buy them from our <Link to="/products">Product List</Link></h3></div>
 	} else {
 		renderProducts = cartItems.map((product, i) => {
 			return (
@@ -21,7 +21,7 @@ const ProductCart = ({ cartItems, totalCartCost, cartRemovalHandler }) => {
 		<hr/>
 		<div className="row">
 		    <div className="col-sm-6"><h2>Total cost</h2></div>
-		    <div className="col-sm-6"><span className="pull-right"><h2>${totalCartCost}</h2></span></div>
+		    <div className="col-sm-6"><span className="pull-right total-cart-cost"><h2>${totalCartCost}</h2></span></div>
 	  	</div>
 		<hr/>
 	</div>
